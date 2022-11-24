@@ -21,7 +21,7 @@ $ python test.py
 $ python main.py
 ```
 
-![Figure of regression](https://github.com/Rahat-Khan-Pathan/salary-prediction-using-simple-linear-regression/figures/regression.png?raw=true)
+![Figure of regression](https://github.com/Rahat-Khan-Pathan/salary-prediction-using-simple-linear-regression/blob/main/figures/regression.png?raw=true)
 
 <b><u>R-Squared gained</u></b> - 0.998 (Quite Good!)
 
