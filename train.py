@@ -33,12 +33,28 @@ def cal_mean(data):
     return mean
 
 def cal_slope(X,y,meanX,meanY):
+    # sum_X=0
+    # sum_X_sq=0
+    # sum_y=0
+    # sum_y_sq=0
+    # sum_X_y=0
+    # for val in X:
+    #     sum_X+=val
+    #     sum_X_sq+=math.pow(val,2)
+    # for val in y:
+    #     sum_y+=val
+    #     sum_y_sq+=math.pow(val,2)
+    # for indx in range(len(X)):
+    #     sum_X_y+=(X[indx]*y[indx])
+    
     upper=0
     lower=0
     for indx in range(len(X)):
         upper+=((X[indx]-meanX)*(y[indx]-meanY))
         lower+=(math.pow((X[indx]-meanX),2))
     slope=upper/lower
+    # slope=((len(X)*sum_X_y)-(sum_X*sum_y))/((len(X)*sum_X_sq)-(math.pow(sum_X,2)))
+    # c=((sum_y*sum_X_sq)-(sum_X*sum_X_y))/((len(X)*sum_X_sq)-(pow(sum_X,2)))
     return slope
 
 def train_model(df,X,y):
@@ -47,7 +63,9 @@ def train_model(df,X,y):
     meanX=cal_mean(X)
     meanY=cal_mean(y)
     m=cal_slope(X,y,meanX,meanY)
+    print(m)
     c=meanY-(m*meanX)
+    print(c)
     trained_data={}
     trained_data["meanX"]=meanX
     trained_data["meanY"]=meanY
